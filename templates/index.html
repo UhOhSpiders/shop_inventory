@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="grid-container">    
+<section class="grid-container">
+    <p>name</p>
+    <p>description</p>
+    <p>quantity</p>
+    <p>buying_cost</p>
+    <p>selling_cost</p>
+    <p>category</p>
+    <p>merchant</p>
     {% for product in products %}
-    <h2>{{ product.product_name }}</h2>
-    <h2>{{ product.product_description }}</h2>
-    <h2>{{ product.stock_quantity }}</h2>
-    <h2>{{ product.merchant.merchant_name }}</h2>
+    <p>{{ product.product_name }} </p>
+    <p>{{ product.product_description }} </p>
+    <p>{{ product.stock_quantity }} </p>
+    <p>{{ product.buying_cost }} </p>
+    <p>{{ product.selling_cost }} </p>
+    <p>{{ product.category }} </p>
+    <p>{{ product.merchant.merchant_name }} </p>
+    
     {% endfor %}
 </section>
 {% endblock %}
