@@ -9,8 +9,6 @@ product_repository.delete_all()
 merchant_repository.delete_all()
 merchant_1 = Merchant('Grogg', 'Chaotic Good')
 merchant_repository.save(merchant_1)
-# merchant_repository.delete(1)
-# pdb.set_trace()
 product_1 = Product('Lolipop', 'melted', 12, merchant_1)
 product_2 = Product('Pocket Lint', 'useless', 12, merchant_1)
 product_repository.save(product_1)
@@ -26,3 +24,4 @@ merchant_repository.update(merchant_1)
 product_2.product_description = 'very tasty'
 product_repository.update(product_2)
 
+print(product_1.merchant.merchant_name)

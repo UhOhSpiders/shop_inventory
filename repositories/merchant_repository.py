@@ -17,7 +17,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        merchant = Merchant(result['id'], result['merchant_name'], result['alignment'])
+        merchant = Merchant(result['merchant_name'], result['alignment'], result['id'])
     return merchant
 
 def select_all():

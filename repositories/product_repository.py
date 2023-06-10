@@ -4,10 +4,14 @@ from models.product import Product
 from models.merchant import Merchant
 import repositories.merchant_repository as merchant_repository
 
+def delete(id):
+    sql = "DELETE FROM products WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM products"
     results = run_sql(sql)
-
 
 def save(product):
     sql = "INSERT INTO products (product_name, product_description, stock_quantity, merchant_id) VALUES (%s, %s, %s, %s) RETURNING *"
@@ -30,7 +34,6 @@ def select_all():
     return products
 
 def select(id):
-    # pdb.set_trace()
     product = None
     sql = "SELECT * FROM products WHERE id = %s"
     values = [id]
@@ -41,12 +44,6 @@ def select(id):
         merchant = merchant_repository.select(result['merchant_id'])
         product = Product(result['product_name'], result['product_description'], result['stock_quantity'],merchant)
     return product
-
-
-def delete(id):
-    sql = "DELETE FROM products WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
 
 def update(product):
     sql = "UPDATE products SET (product_name, product_description, stock_quantity, merchant_id) = (%s, %s, %s, %s) WHERE id = %s"
