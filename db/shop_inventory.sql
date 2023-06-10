@@ -18,7 +18,7 @@ CREATE TABLE products (
     -- buying_cost INT,
     -- selling_cost INT,
     -- category VARCHAR(255),
-  -- min_stock_level INT
+    -- min_stock_level INT
 
 -- INSERT INTO merchants (merchant_name, alignment) VALUES ('ganglebert', 'lawful good');
 -- INSERT INTO products (product_name, product_description, stock_quantity, buying_cost, selling_cost, category, merchant_id, min_stock_level) VALUES

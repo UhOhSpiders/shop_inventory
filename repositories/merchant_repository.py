@@ -25,7 +25,7 @@ def select_all():
     sql = "SELECT * FROM merchants"
     results = run_sql(sql)
     for row in results:
-        merchant = Merchant(row['merhcant_name'], row['alignment'], merchant, row['id'])
+        merchant = Merchant(row['merchant_name'], row['alignment'], row['id'])
         merchants.append(merchant)
     return merchants
 
@@ -37,6 +37,11 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM merchants WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+def update(merchant):
+    sql = "UPDATE merchants SET (merchant_name, alignment) = (%s, %s) WHERE id = %s"
+    values = [merchant.merchant_name, merchant.alignment, merchant.id]
     run_sql(sql, values)
 
 
