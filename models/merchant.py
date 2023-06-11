@@ -1,6 +1,7 @@
 class Merchant:
 
-    def __init__(self, merchant_name, alignment, id = None):
+    def __init__(self, merchant_name, ethics, morals, id = None):
         self.merchant_name = merchant_name
-        self.alignment = alignment
+        self.ethics = ethics
+        self.morals = morals
         self.id = id

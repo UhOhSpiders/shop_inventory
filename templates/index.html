@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
+<p>Click product or merchant to view details</p>
 <section class="grid-container">
-    <p>name</p>
-    <p>description</p>
-    <p>quantity</p>
-    <p>buying_cost</p>
-    <p>selling_cost</p>
-    <p>category</p>
-    <p>merchant</p>
+    <p>Name</p>
+    <p>Description</p>
+    <p>Quantity</p>
+    <p>Buying Cost</p>
+    <p>Selling Cost</p>
+    <p>Category</p>
+    <p>Merchant</p>
     {% for product in products %}
-    <p>{{ product.product_name }} </p>
-    <p>{{ product.product_description }} </p>
-    <p>{{ product.stock_quantity }} </p>
-    <p>{{ product.buying_cost }} </p>
-    <p>{{ product.selling_cost }} </p>
-    <p>{{ product.category }} </p>
-    <p>{{ product.merchant.merchant_name }} </p>
-    
+        <a href="/products/{{product.id}}"> <p>{{ product.product_name }} </p> </a>
+        <p>{{ product.product_description }} </p>
+        <p>{{ product.stock_quantity }} </p>
+        <p>{{ product.buying_cost }} </p>
+        <p>{{ product.selling_cost }} </p>
+        <p>{{ product.category }} </p>
+        <a href="/merchants/{{product.merchant.id}}"><p>{{ product.merchant.merchant_name }} </p> </a>
     {% endfor %}
 </section>
 {% endblock %}

@@ -7,7 +7,7 @@ import repositories.merchant_repository as merchant_repository
 
 product_repository.delete_all()
 merchant_repository.delete_all()
-merchant_1 = Merchant('Grogg', 'Chaotic Good')
+merchant_1 = Merchant('Grogg', 'Chaotic', 'Good')
 merchant_repository.save(merchant_1)
 product_1 = Product('Lolipop', 'melted', 12, 10, 12, 'misc', 10, merchant_1)
 product_2 = Product('Pocket Lint', 'useless', 12, 2, 2, 'misc', 10, merchant_1)
@@ -17,7 +17,7 @@ product_repository.save(product_2)
 # result = product_repository.select(2)
 # result_2 = product_repository.select_all()
 # result_3 = merchant_repository.select_all()
-merchant_1.alignment = 'Chaotic Evil'
+merchant_1.morals = 'Evil'
 # merchant_repository.select(23)
 merchant_repository.update(merchant_1)
 # merchant_repository.save(merchant_1)

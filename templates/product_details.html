@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+Edit button here
+<p>{{ product.product_name }} </p>
+<p>{{ product.product_description }} </p>
+<p>{{ product.stock_quantity }} </p>
+<p>{{ product.buying_cost }} </p>
+<p>{{ product.selling_cost }} </p>
+<p>{{ product.category }} </p>
+<p>{{ product.merchant.merchant_name }} </p> 
+{% endblock %}

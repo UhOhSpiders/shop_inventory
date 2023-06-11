@@ -9,4 +9,4 @@ class Product:
         self.category = category
         self.min_stock_level = min_stock_level
         self.merchant = merchant
-        self.id = id
+        self.id = id 

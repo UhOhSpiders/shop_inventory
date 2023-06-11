@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS merchants;
 
 CREATE TABLE merchants (
     merchant_name VARCHAR(255),
-    alignment VARCHAR(255),
+    ethics VARCHAR(255),
+    morals VARCHAR(255),
     id SERIAL PRIMARY KEY
 );
 

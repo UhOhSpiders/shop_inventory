@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+new merchant goes here
+<form action="/merchants" method="post">
+    <div>
+        <label for="merchant_name">Name:</label>
+        <input type="text" id="merchant_name" name="merchant_name" placeholder="Merchant" required autofocus>
+    </div>
+    <div>
+        <label for="ethics"> Ethics: </label>
+        <select name="ethics" id="ethics">
+            <option value="Lawful">Lawful</option>
+            <option value="Neutral">Neutral</option> 
+            <option value="Chaotic">Chaotic</option>     
+        </select>
+    </div>
+    <div>
+        <label for="morals"> Morals: </label>
+        <select name="morals" id="morals">
+            <option value="Good">Good</option>
+            <option value="Neutral">Neutral</option> 
+            <option value="Evil">Evil</option>     
+        </select>
+    </div>
+    <button type="submit">Register Merchant</button>
+</form>
+{% endblock %}
