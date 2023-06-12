@@ -46,7 +46,7 @@ def edit_product(id):
     merchants = merchant_repository.select_all()
     return render_template('products/edit.html', product = product, merchants = merchants)
 
-@products_blueprint.route("/products/<id>", methods=['POST'])
+@products_blueprint.route("/products/update/<id>", methods=['POST'])
 def update_product(id):
     # pdb.set_trace()
     product_name = request.form['product_name']
@@ -56,8 +56,7 @@ def update_product(id):
     selling_cost = request.form ['selling_cost']
     category = request.form ['category']
     min_stock_level = request.form ['min_stock_level']
-    merchant_id = request.form ['merchant_id']
-    merchant = merchant_repository.select(merchant_id)
+    merchant = merchant_repository.select(request.form ['merchant_id']) 
     product = Product(product_name, product_description, stock_quantity, buying_cost, selling_cost, category, min_stock_level, merchant, id)
     product_repository.update(product)
     return redirect("/")
@@ -80,3 +79,23 @@ def new_merchant():
 def show_merchant(id):
     merchant = merchant_repository.select(id)
     return render_template('merchant_details.html', merchant = merchant)
+
+@products_blueprint.route("/merchants/<id>/edit", methods=['GET'])
+def edit_merchant(id):
+    merchant = merchant_repository.select(id)
+    return render_template('merchants/edit.html', merchant = merchant)
+
+@products_blueprint.route("/products/update/<id>", methods=['POST'])
+def update_product(id):
+    # pdb.set_trace()
+    product_name = request.form['product_name']
+    product_description = request.form['product_description']
+    stock_quantity = request.form['stock_quantity']
+    buying_cost = request.form ['buying_cost']
+    selling_cost = request.form ['selling_cost']
+    category = request.form ['category']
+    min_stock_level = request.form ['min_stock_level']
+    merchant = merchant_repository.select(request.form ['merchant_id']) 
+    product = Product(product_name, product_description, stock_quantity, buying_cost, selling_cost, category, min_stock_level, merchant, id)
+    product_repository.update(product)
+    return redirect("/")

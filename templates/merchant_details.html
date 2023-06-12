@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-Edit button here
+<a href="/merchants/{{merchant.id}}/edit">Edit button here</a>
 <p>{{ merchant.merchant_name }} </p>
 <p>{{ merchant.ethics }} {{ merchant.morals }} </p>
 {% endblock %}
