@@ -21,7 +21,13 @@ merchant_1.morals = 'Evil'
 # merchant_repository.select(23)
 merchant_repository.update(merchant_1)
 # merchant_repository.save(merchant_1)
+print(product_2.product_description)
 product_2.product_description = 'very tasty'
 product_repository.update(product_2)
 
+result = product_repository.select(product_2.id)
+
 print(product_1.merchant.merchant_name)
+print(product_1.id)
+print(result.product_description)
+print(product_2.product_description)

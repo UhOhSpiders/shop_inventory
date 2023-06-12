@@ -23,7 +23,7 @@ def new_product():
 @products_blueprint.route("/products", methods=['POST'])
 def create_product():
     product_name = request.form['product_name']
-    product_description = request.form['product_name']
+    product_description = request.form['product_description']
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form ['buying_cost']
     selling_cost = request.form ['selling_cost']
@@ -39,6 +39,28 @@ def create_product():
 def show_product(id):
     product = product_repository.select(id)
     return render_template('product_details.html', product = product)
+
+@products_blueprint.route("/products/<id>/edit", methods=['GET'])
+def edit_product(id):
+    product = product_repository.select(id)
+    merchants = merchant_repository.select_all()
+    return render_template('products/edit.html', product = product, merchants = merchants)
+
+@products_blueprint.route("/products/<id>", methods=['POST'])
+def update_product(id):
+    # pdb.set_trace()
+    product_name = request.form['product_name']
+    product_description = request.form['product_description']
+    stock_quantity = request.form['stock_quantity']
+    buying_cost = request.form ['buying_cost']
+    selling_cost = request.form ['selling_cost']
+    category = request.form ['category']
+    min_stock_level = request.form ['min_stock_level']
+    merchant_id = request.form ['merchant_id']
+    merchant = merchant_repository.select(merchant_id)
+    product = Product(product_name, product_description, stock_quantity, buying_cost, selling_cost, category, min_stock_level, merchant, id)
+    product_repository.update(product)
+    return redirect("/")
 
 @products_blueprint.route("/merchants", methods=['POST'])
 def create_merchant():

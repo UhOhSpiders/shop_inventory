@@ -42,7 +42,7 @@ def select(id):
     if results:
         result = results[0]
         merchant = merchant_repository.select(result['merchant_id'])
-        product = Product(result['product_name'], result['product_description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['category'], result['min_stock_level'], merchant)
+        product = Product(result['product_name'], result['product_description'], result['stock_quantity'], result['buying_cost'], result['selling_cost'], result['category'], result['min_stock_level'], merchant, result['id'])
     return product
 
 def update(product):
