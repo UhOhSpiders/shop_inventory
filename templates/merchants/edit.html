@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 {% block content%}
 <form action="/merchants/update/{{merchant.id}}" method="post">
     <div>
@@ -20,6 +21,6 @@
             <option value="Evil">Evil</option>     
         </select>
     </div>
-    <button type="submit">Register Merchant</button>
+    <button type="submit">Update Merchant</button>
 </form>
 {% endblock %}

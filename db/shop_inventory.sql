@@ -20,8 +20,6 @@ CREATE TABLE products (
     merchant_id INT NOT NULL REFERENCES merchants(id)
 );
 
-   
-
 -- INSERT INTO merchants (merchant_name, alignment) VALUES ('ganglebert', 'lawful good');
 -- INSERT INTO products (product_name, product_description, stock_quantity, buying_cost, selling_cost, category, merchant_id, min_stock_level) VALUES
 -- ('Hogweed', 'Smells bad', '12', '1', '15', 'ingredient', '1','15');
