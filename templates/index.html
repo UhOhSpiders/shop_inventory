@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
+<form action="/filter" method="post">
+    <div>
+        <label for="category"> Category: </label>
+        <select name="category" id="category">
+            <option value="animal">Animal</option>
+            <option value="mineral">Mineral</option> 
+            <option value="vegetable">Vegetable</option>     
+        </select>
+    </div>
+    <div>
+        <button type="submit">Filter</button>
+    </div>
+</form>
 <p>Click product or merchant to view details</p>
 <section class="grid-container">
     <p>Name</p>

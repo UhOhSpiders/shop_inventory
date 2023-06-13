@@ -15,6 +15,13 @@ def products():
     # merchants = merchant_repository.select_all()
     return render_template("/index.html", products = products)
 
+@products_blueprint.route("/filter", methods=['POST'])
+def view_category():
+    # pdb.set_trace()
+    category = request.form['category']
+    products = product_repository.select_by_category(category)
+    return render_template("/index.html", products = products)
+
 @products_blueprint.route("/new_product")
 def new_product():
     merchants = merchant_repository.select_all()
