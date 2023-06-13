@@ -9,9 +9,11 @@
     <p>Selling Cost</p>
     <p>Category</p>
     <p>Merchant</p>
+    <p>Stock</p>
     <p>Delete</p>
     <hr>
     {% for product in products %}
+        
         <a href="/products/{{product.id}}"> <p>{{ product.product_name }} </p> </a>
         <p>{{ product.product_description }} </p>
         <p>{{ product.stock_quantity }} </p>
@@ -19,9 +21,15 @@
         <p>{{ product.selling_cost }} </p>
         <p>{{ product.category }} </p>
         <a href="/merchants/{{product.merchant.id}}"><p>{{ product.merchant.merchant_name }} </p> </a>
+        {% if product.stock_quantity < product.min_stock_level %}
+        <p>LOW STOCK</p>
+        {% else %}
+        <p>STOCK GOOD</p>
+        {% endif %}
         <form class="delete-form" action="/products/delete/{{product.id}}" method="POST">
-            <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+            <button class="trash-button"><i class="fa fa-trash-o fa-3x" aria-hidden="true"></i></button>
         </form>
+       
     {% endfor %}
 </section>
 {% endblock %}

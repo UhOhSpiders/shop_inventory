@@ -7,10 +7,10 @@ import repositories.merchant_repository as merchant_repository
 
 product_repository.delete_all()
 merchant_repository.delete_all()
-merchant_1 = Merchant('Grogg', 'Chaotic', 'Good')
+merchant_1 = Merchant('Grogg', 'Chaotic', 'Good', 'grogg@gmail.com')
 merchant_repository.save(merchant_1)
-product_1 = Product('Lolipop', 'melted', 12, 10, 12, 'misc', 10, merchant_1)
-product_2 = Product('Pocket Lint', 'useless', 12, 2, 2, 'misc', 10, merchant_1)
+product_1 = Product('Lolipop', 'melted', 12.50, 10, 12, 'misc', 10, merchant_1)
+product_2 = Product('Pocket Lint', 'useless', 12.32, 2, 2, 'misc', 10, merchant_1)
 product_repository.save(product_1)
 product_repository.save(product_2)
 # merchant_repository.select(21)

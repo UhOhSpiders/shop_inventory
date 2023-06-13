@@ -72,7 +72,8 @@ def create_merchant():
     merchant_name = request.form['merchant_name']
     ethics = request.form['ethics']
     morals = request.form['morals']
-    merchant = Merchant(merchant_name, ethics, morals)
+    email = request.form['email']
+    merchant = Merchant(merchant_name, ethics, morals, email)
     merchant_repository.save(merchant)
     return redirect("/")
 
@@ -95,7 +96,8 @@ def update_merchant(id):
     # pdb.set_trace()
     merchant_name = request.form['merchant_name']
     ethics = request.form['ethics']
-    morals = request.form['morals'] 
-    merchant = Merchant(merchant_name, morals, ethics, id)
-    product_repository.update(merchant)
+    morals = request.form['morals']
+    email = request.form['email'] 
+    merchant = Merchant(merchant_name, morals, ethics, email, id)
+    merchant_repository.update(merchant)
     return redirect("/")

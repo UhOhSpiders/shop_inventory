@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-Enter product details bellow
+
 <form action="/products" method="post">
+    Enter product details bellow:
     <div>
         <label for="product_name">Name:</label>
         <input type="text" id="product_name" name="product_name" placeholder="Name" required autofocus>
@@ -44,6 +45,9 @@ Enter product details bellow
         </select>
     </div>
 
-    <button type="submit">Add Product</button>
+    <div>
+
+        <button type="submit">Save New Details</button>
+    </div>
 </form>
 {% endblock %}

@@ -1,7 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href="/merchants/{{merchant.id}}/edit">Edit button here</a>
-<p>{{ merchant.merchant_name }} </p>
-<p>{{ merchant.ethics }} {{ merchant.morals }} </p>
+<section>
+    <p>{{ merchant.merchant_name }} </p>
+    {% if merchant.ethics == merchant.morals %}
+    <p>True Neutral</p>
+    {% else %}
+    <p>{{ merchant.ethics }} {{ merchant.morals }} </p>
+    {% endif %}
+    <address><a href="mailto:{{merchant.email}}">{{ merchant.email }}</a></address>
+    <a href="/merchants/{{merchant.id}}/edit" class="button"><p>Edit details</p></a>
+    {% if merchant.ethics == 'Lawful' %}
+        <p> lawful advice </p>
+    {% elif merchant.ethics == 'Neutral' %}
+        <p>neutral advice</p>
+    {% elif merchant.ethics == 'Chaotic' %}
+        <p>chaotic advice</p>
+    {% endif %}
+    {% if merchant.morals == 'Good' %}
+        <p> good advice </p>
+    {% elif merchant.morals == 'Neutral' %}
+        <p>neutral advice</p>
+    {% elif merchant.morals == 'Evil' %}
+        <p>evil advice</p>
+    {% endif %}
+</section>
 {% endblock %}

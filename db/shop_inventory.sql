@@ -5,6 +5,7 @@ CREATE TABLE merchants (
     merchant_name VARCHAR(255),
     ethics VARCHAR(255),
     morals VARCHAR(255),
+    email VARCHAR(255),
     id SERIAL PRIMARY KEY
 );
 
@@ -13,8 +14,8 @@ CREATE TABLE products (
     product_name VARCHAR(255),
     product_description VARCHAR (255),
     stock_quantity INT,
-    buying_cost INT,
-    selling_cost INT,
+    buying_cost DECIMAL(13,2),
+    selling_cost DECIMAL(13,2),
     category VARCHAR(255),
     min_stock_level INT,
     merchant_id INT NOT NULL REFERENCES merchants(id)

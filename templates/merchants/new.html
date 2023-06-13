@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-new merchant goes here
 <form action="/merchants" method="post">
     <div>
         <label for="merchant_name">Name:</label>
@@ -23,6 +22,13 @@ new merchant goes here
             <option value="Evil">Evil</option>     
         </select>
     </div>
-    <button type="submit">Register Merchant</button>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="merchant@emial.org" required>
+    </div>
+    <div>
+
+        <button type="submit">Register Merchant</button>
+    </div>
 </form>
 {% endblock %}

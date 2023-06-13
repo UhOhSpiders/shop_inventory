@@ -2,25 +2,47 @@ body{
     font-family: sans-serif;
     margin: 20px;
     height: 200px;
-    background-color: #cccccc;
-    /* background-image: repeating-linear-gradient(red, yellow 10%, green 20%); */
+    background-color: #fffbd4;
 }
 
 h1{
-    margin: auto;
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 nav > ul > li > a{
-    background-color: coral;
+    background-color: #005e10;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     color: white;
 }
 
+ul{
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+nav > ul > li > a:hover, .button:hover{
+    background-color:#288710;
+}
+
+section{
+    background-color: #FFE39B;
+    padding: 10px;
+    border-radius: 5px; 
+}
+
 .grid-container{
     display: grid;
-    grid-template-columns: repeat(8,1fr);
+    grid-template-columns: repeat(9,1fr);
+}
+
+form{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
     background-color: #FFE39B;
     padding: 10px;
     border-radius: 5px;
@@ -31,13 +53,45 @@ p{
     padding-left: 5px;
 }
 
-ul{
-    list-style: none;
-    display: flex;
-    gap: 50px;
+
+
+.trash-button{
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: inherit;
+}
+
+i{
+    color: grey;
+}
+
+i:hover{
+    cursor: pointer;
+    color: black;
 }
 
 hr{
-    grid-column: 1 / 9;
+    grid-column: 1 / 10;
     width: 100%;
 }
+
+footer{
+    background-color: #005e10;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+img{
+    position:absolute;
+    z-index: 1;
+    bottom: 0;
+    right:0;
+    height: 30%;
+    pointer-events: none;
+}
+
