@@ -83,8 +83,12 @@ def new_merchant():
 
 @products_blueprint.route("/merchants/<id>", methods=['GET'])
 def show_merchant(id):
+    # pdb.set_trace()
     merchant = merchant_repository.select(id)
-    return render_template('merchant_details.html', merchant = merchant)
+    ethics = merchant.ethics
+    morals = merchant.morals
+    advice = merchant.get_advice(ethics, morals)
+    return render_template('merchant_details.html', merchant = merchant, advice = advice)
 
 @products_blueprint.route("/merchants/<id>/edit", methods=['GET'])
 def edit_merchant(id):
@@ -98,6 +102,6 @@ def update_merchant(id):
     ethics = request.form['ethics']
     morals = request.form['morals']
     email = request.form['email'] 
-    merchant = Merchant(merchant_name, morals, ethics, email, id)
+    merchant = Merchant(merchant_name, ethics, morals, email, id)
     merchant_repository.update(merchant)
     return redirect("/")
