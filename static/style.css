@@ -110,5 +110,18 @@ img{
     right:0;
     height: 30%;
     pointer-events: none;
+    animation-name: goblin-animation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
+@keyframes goblin-animation {
+    from {
+      bottom: 0;
+    }
+    to {
+     bottom: -150px;
+  }
+}

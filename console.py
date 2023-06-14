@@ -11,7 +11,7 @@ merchant_2 = Merchant('Careful Whisperer', 'Neutral', 'Evil', 'carefulfeet@gmail
 merchant_3 = Merchant('Buff Humanoid Squirell', 'Lawful', 'Good', 'jeff@nutty.com')
 merchant_4 = Merchant('John Smith', 'Neutral', 'Neutral', 'john.smith1@gmail.com')
 merchant_5 = Merchant('Goblin Brewing Co.', 'Lawful', 'Good', 'sales@gbc.com')
-merchant_6 = Merchant('David Cameron With The Head of a Preying Mantis', 'Lawful', 'Evil', 'daveydave@gmail.com')
+merchant_6 = Merchant('David Cameron With The Head of a Praying Mantis', 'Lawful', 'Evil', 'daveydave@gmail.com')
 
 product_1 = Product('Lolipop', 'melted', 12, 1, 1.50, 'vegetable', 10, merchant_1)
 product_2 = Product('Pocket Lint', 'useless', 5, 0.50, 0.70, 'vegetable', 10, merchant_1)
