@@ -3,7 +3,7 @@
 <form action="/merchants/update/{{merchant.id}}" method="post">
     <div>
         <label for="merchant_name">Name:</label>
-        <input type="text" id="merchant_name" name="merchant_name" placeholder="Merchant" required autofocus>
+        <input type="text" id="merchant_name" name="merchant_name" placeholder="Merchant" value="{{merchant.merchant_name}}"required autofocus>
     </div>
     <div>
         <label for="ethics"> Ethics: </label>
@@ -23,7 +23,7 @@
     </div>
     <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="merchant@emial.org" required>
+        <input type="email" id="email" name="email" placeholder="merchant@emial.org" value="{{merchant.email}}" required>
     </div>
     <div>
     <button type="submit">Update Merchant</button>
