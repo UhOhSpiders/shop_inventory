@@ -2,13 +2,13 @@
 
 {% block content %}
 <section> 
-    <p>{{ product.product_name }} </p>
-    <p>{{ product.product_description }} </p>
-    <p>{{ product.stock_quantity }} </p>
-    <p>{{ product.buying_cost }} </p>
-    <p>{{ product.selling_cost }} </p>
-    <p>{{ product.category }} </p>
-    <p>{{ product.merchant.merchant_name }} </p>
+    <h2>{{ product.product_name }} </h2>
+    <p>Description: {{ product.product_description }} </p>
+    <p>Quantity: {{ product.stock_quantity }} </p>
+    <p>Buying cost: £{{ product.buying_cost }} </p>
+    <p>Selling cost: £{{ product.selling_cost }} </p>
+    <p>Category: {{ product.category }} </p>
+    <p>Merchant: {{ product.merchant.merchant_name }} </p>
     <a href="/products/{{product.id}}/edit" class="button"><p>Edit Product Details</p></a>
 </section>
 {% endblock %}

@@ -5,9 +5,9 @@
     <h2>{{ merchant.merchant_name }} </h2>
     <address>Email: <a href="mailto:{{merchant.email}}">{{ merchant.email }}</a></address>
     {% if merchant.ethics == merchant.morals %}
-    <p>True Neutral</p>
+    <p>Alignment: True Neutral</p>
     {% else %}
-    <p>{{ merchant.ethics }} {{ merchant.morals }} </p>
+    <p>Alignment: {{ merchant.ethics }} {{ merchant.morals }} </p>
     {% endif %}
     <p>Recomended negotiation strategy: {{ advice }}</p>
     <a href="/merchants/{{merchant.id}}/edit" class="button"><p>Edit details</p></a>
