@@ -4,13 +4,12 @@ from models.product import Product
 import repositories.product_repository as product_repository
 import repositories.merchant_repository as merchant_repository
 
-
 product_repository.delete_all()
 merchant_repository.delete_all()
 merchant_1 = Merchant('Grogg', 'Chaotic', 'Good', 'groggy@gmail.com')
 merchant_2 = Merchant('Careful Whisperer', 'Neutral', 'Evil', 'carefulfeet@gmail.com')
 merchant_3 = Merchant('Buff Humanoid Squirell', 'Lawful', 'Good', 'jeff@nutty.com')
-merchant_4 = Merchant('John Smith', 'Neutral', 'Neutrual', 'john.smith1@gmail.com')
+merchant_4 = Merchant('John Smith', 'Neutral', 'Neutral', 'john.smith1@gmail.com')
 merchant_5 = Merchant('Goblin Brewing Co.', 'Lawful', 'Good', 'sales@gbc.com')
 merchant_6 = Merchant('David Cameron With The Head of a Preying Mantis', 'Lawful', 'Evil', 'daveydave@gmail.com')
 
@@ -25,7 +24,6 @@ product_8 = Product('Haunted Toaster', 'burns satantic messages into every slice
 product_9 = Product('Vial of Human Tears', 'too salty', 17, 20, 50, 'animal', 10, merchant_6)
 product_10 = Product('Wizard Beard IPA', 'tastes greate once you pick the hairs out', 24, 3, 5, 'vegetable', 10, merchant_5)
 product_11= Product('Forgotten Pickaxe Stout', 'do not sell any more of this to Grogg', 24, 2, 4, 'vegetable', 10, merchant_5)
-
 
 merchant_repository.save(merchant_1)
 merchant_repository.save(merchant_2)

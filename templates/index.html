@@ -30,12 +30,12 @@
         <a href="/products/{{product.id}}"> <p>{{ product.product_name }} </p> </a>
         <p>{{ product.product_description }} </p>
         <p>{{ product.stock_quantity }} </p>
-        <p>{{ product.buying_cost }} </p>
-        <p>{{ product.selling_cost }} </p>
+        <p>£{{ product.buying_cost }} </p>
+        <p>£{{ product.selling_cost }} </p>
         <p>{{ product.category }} </p>
         <a href="/merchants/{{product.merchant.id}}"><p>{{ product.merchant.merchant_name }} </p> </a>
         {% if product.stock_quantity < product.min_stock_level %}
-        <p>LOW STOCK</p>
+        <p style="color:red">LOW STOCK</p>
         {% else %}
         <p>STOCK GOOD</p>
         {% endif %}
